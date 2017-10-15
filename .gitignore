@@ -1,0 +1,20 @@
+# Unreal Generated Files
+
+*/Build
+*/Binaries
+*/DerivedDataCache
+*/Intermediate
+*/Saved
+
+# personal files
+*LectureNotes
+
+# Large Files
+BuildingEscape/Content/StarterContent/Textures
+BuildingEscape/Content/StarterContent/HDRI
+
+*.VC.db
+*.VC.VC.opendb
+*.pch
+
+*.suo
