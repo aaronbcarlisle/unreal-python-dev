@@ -6,6 +6,10 @@
 */Intermediate
 */Saved
 
+# visual studio files
+*/.vs
+*/x64
+
 # personal files
 *LectureNotes
 
