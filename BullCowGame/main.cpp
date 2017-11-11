@@ -9,7 +9,7 @@ using int32 = int;
 void PrintIntro();
 void PlayGame();
 FText GetGuess();
-void PrintGuess(FText Guess);
+void PrintGuess(FBullCowCount Guess);
 bool AskToPlayAgain();
 
 // game instance
@@ -52,8 +52,12 @@ void PlayGame()
     // loop through turns.
     for (int32 count = 1; count <= MaxTries; count++)
     {
+		FText Guess = GetGuess();
+
+		// submit valid guess to the game
+		FBullCowCount BullCowCount = BCGame.SubmitGuess(Guess);
         // get guess and print back
-        PrintGuess(GetGuess());
+        PrintGuess(BullCowCount);
     }
 
 	// TODO Summarize game
@@ -74,11 +78,10 @@ FText GetGuess()
     return Guess;
 }
 
-void PrintGuess(FText Guess)
+void PrintGuess(FBullCowCount BullCowCount)
 {
-    // repeat the guess back
-    std::cout << "Your guess was: " << Guess << std::endl;
-    std::cout << std::endl;
+	std::cout << "Bulls = " << BullCowCount.Bulls;
+	std::cout << " | Cows = " << BullCowCount.Cows << std::endl;
 }
 
 bool AskToPlayAgain()
