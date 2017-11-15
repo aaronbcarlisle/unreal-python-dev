@@ -7,24 +7,23 @@ FBullCowGame::FBullCowGame() { Reset(); }
 // getters
 int32 FBullCowGame::GetMaxTries() const { return MyMaxTries; }
 int32 FBullCowGame::GetCurrentTry() const { return MyCurrentTry; }
+int32 FBullCowGame::GetHiddenWordLength() const { return MyHiddenWord.length(); }
+
+// constants
 bool FBullCowGame::IsGameWon() const { return true; }
+bool FBullCowGame::CheckGuessValidity(FString) const { return true; }
 
 void FBullCowGame::Reset()
 {
+	// constants
 	constexpr int32 MAX_TRIES = 8;
-	MyMaxTries = MAX_TRIES;
-
 	const FString HIDDEN_WORD = "planet";
-	MyHiddenWord = HIDDEN_WORD;
 
+	// reset members
+	MyMaxTries = MAX_TRIES;
+	MyHiddenWord = HIDDEN_WORD;
 	MyCurrentTry = 1;
 	return;
-}
-
-
-bool FBullCowGame::CheckGuessValidity(FString)
-{
-	return true;
 }
 
 // receives a valid guess, increments turn, and returns count
@@ -60,7 +59,6 @@ FBullCowCount FBullCowGame::SubmitGuess(FString Guess)
 			}
 		}
 	}
-		// compare letters against the hidden word
 
 	return BullCowCount;
 }
