@@ -9,7 +9,7 @@ using int32 = int;
 void PrintIntro();
 void PlayGame();
 FText GetValidGuess();
-void PrintGuess(FBullCowCount Guess);
+void PrintTrySummary(FBullCowCount Guess);
 bool AskToPlayAgain();
 
 // game instance
@@ -41,21 +41,21 @@ void PrintIntro()
 
 void PlayGame()
 {
+	BCGame.Reset();
 
     // get max tries
-	BCGame.Reset();
     int32 MaxTries = BCGame.GetMaxTries();
 
     // loop through turns.
-    for (int32 count = 1; count <= MaxTries; count++)
+    while (!BCGame.IsGameWon() && BCGame.GetCurrentTry() <= MaxTries)
     {
 		FText Guess = GetValidGuess();
 
 		// submit valid guess to the game
-		FBullCowCount BullCowCount = BCGame.SubmitGuess(Guess);
+		FBullCowCount BullCowCount = BCGame.SubmitValidGuess(Guess);
 
-        // output guess
-        PrintGuess(BullCowCount);
+        // output guess from BullCowCount game
+        PrintTrySummary(BullCowCount);
     }
 
 	// TODO Summarize game
@@ -64,13 +64,13 @@ void PlayGame()
 // loop until valid guess
 FText GetValidGuess() 
 {
+	FText Guess = "";
 	EGuessStatus Status = EGuessStatus::Invalid_Status;
 	do {
 		// current try
 		int32 CurrentTry = BCGame.GetCurrentTry();
 
 		// ask for guess
-		FText Guess = "";
 		std::cout << "Try " << CurrentTry << ". Enter your guess: ";
 
 		// get guess
@@ -85,19 +85,23 @@ FText GetValidGuess()
 			std::cout << "Please enter a " << BCGame.GetHiddenWordLength() << " letter word.\n";
 			break;
 		case EGuessStatus::Not_Isogram:
-			std::cout << "An isogram is a logological term for a word or phrase without a repeating letter.\n";
+			std::cout << "An isogram is a logo logical term for a word or phrase without a repeating letter.\n";
 			break;
 		case EGuessStatus::Not_Lowercase:
 			std::cout << "Please enter a lowercase word.\n";
 			break;
 		default:
-			return Guess;
+			// assume the guess is valid, break out of switch statement
+			break;
 		}
 		std::cout << std::endl;
 	} while (Status != EGuessStatus::OK);
+
+	// return guess outside loop
+	return Guess; 
 }
 
-void PrintGuess(FBullCowCount BullCowCount)
+void PrintTrySummary(FBullCowCount BullCowCount)
 {
 	std::cout << "Bulls = " << BullCowCount.Bulls;
 	std::cout << " | Cows = " << BullCowCount.Cows;
@@ -108,7 +112,7 @@ bool AskToPlayAgain()
 {
     // ask to play again
     FText Response = "";
-    std::cout << "Do you want to play again (y/n)? ";
+    std::cout << "Do you want to play again (y/n)?\n";
 
     // get response
     std::getline(std::cin, Response);
