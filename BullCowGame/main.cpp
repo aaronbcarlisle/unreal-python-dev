@@ -91,7 +91,7 @@ FText GetValidGuess()
 			std::cout << "Please enter a word without repeating letters.\n";
 			break;
 		case EGuessStatus::Not_Lowercase:
-			std::cout << "Please enter a lowercase word.\n";
+			std::cout << "Please enter only lowercase letters.\n";
 			break;
 		default:
 			// assume the guess is valid, break out of switch statement
