@@ -13,12 +13,14 @@
 # personal files
 *LectureNotes
 
-# Large Files
+# large files
 BuildingEscape/Content/StarterContent/Textures
 BuildingEscape/Content/StarterContent/HDRI
 
+# files
 *.VC.db
 *.VC.VC.opendb
 *.pch
+*_BuiltData.uasset
 
 *.suo
