@@ -21,7 +21,8 @@ void UPositionReport::BeginPlay()
 	
 	// get object from component owner and report
 	FString ObjectName = GetOwner()->GetName();
-	UE_LOG(LogTemp, Warning, TEXT("Position Report for %s!"), *ObjectName);
+	FString ObjectPos = GetOwner()->GetTransform().ToString();
+	UE_LOG(LogTemp, Warning, TEXT("%s at location %s!"), *ObjectName, *ObjectPos);
 }
 
 
