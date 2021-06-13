@@ -3,6 +3,8 @@
 # built-in
 import unreal
 
+skeletal_mesh_library = unreal.EditorSkeletalMeshLibrary()
+
 
 def get_sockets(skeletal_mesh):
     """
@@ -136,3 +138,20 @@ def regenerate_lods(skeletal_mesh, number_of_lods=4):
     """
     return skeletal_mesh.regenerate_lod(number_of_lods)
 
+
+def get_vertex_count(skeletal_mesh, lod_level=0):
+    """
+    Queries a skeletal mesh for the number of vertices present
+
+    :param SkeletalMesh skeletal_mesh: SkeletalMesh to get the vertex count.
+    :param int lod_level: The LOD to query.
+    :return: Returns the vertex count for the given SkeletalMesh.
+    :rtype: int
+    """
+    # get the vertex count
+    vertex_count = skeletal_mesh_library.get_num_verts(
+        skeletal_mesh,
+        lod_level
+    )
+    # return 0 if the vertex count is None
+    return vertex_count or 0

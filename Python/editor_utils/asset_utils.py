@@ -89,7 +89,7 @@ def save_assets(assets, force=False):
 
 def is_valid_asset_path(asset_path):
     """
-    Simple method for validating if the given asset path is a valid in engine.
+    Simple method for validating if the given asset path is valid.
 
     :param str asset_path: Path to validate in engine.
     :return: Returns whether or not the path is valid.
