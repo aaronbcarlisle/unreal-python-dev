@@ -5,7 +5,7 @@ Unreal Stub File
 This package contains the Unreal Engine 5 python stub file with directions on how to set it up for auto-completion in an IDE.
 
 #### DISCLAIMER 
-The `unreal` stub file is dynamic and will get regenerated as developers expose things in Blueprints for their Unreal Projects. The stub file in this package was generated from the vanilla Unreal Engine 5 Early Access build and is meant for convenience.
+The `unreal` stub file is dynamic and will get regenerated as developers expose things in Blueprints for their Unreal Projects. The stub file in this package was generated from    the vanilla Unreal Engine 5 Early Access build and is meant for convenience.
 
 #### STUB SIZE 
 Due to the size of the `unreal` stub file (about 15 MB) I've converted it into a 
@@ -23,7 +23,7 @@ but it's the same principle for all IDE's.
    idea.max.content.load.filesize=250000 
    idea.max.intellisense.filesize=250000
    ```
-   - ######*Feel free to change the `filesize` property value to your liking.*
+   - ###### *Feel free to change the `filesize` property value to your liking.*
 2. Mark the `stub` directory as a `Sources Root` by right-clicking the `stub` directory and going to `Mark Directory as > Sources Root`
    (you can also do this in your project settings via settings).
    
