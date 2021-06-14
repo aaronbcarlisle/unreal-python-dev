@@ -32,7 +32,7 @@ def get_asset_paths(assets):
 
 def select_assets(assets):
     """
-    Convenience method for selected assets from a list of paths. This method
+    Convenience method for selecting a list of assets in the browser. This method
     will also move you to the location of the selected assets in the editor
     browser in engine.
 
