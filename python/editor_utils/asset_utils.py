@@ -54,7 +54,7 @@ def get_selected_assets(as_paths=False):
         the selected assets, if False (default), this will return a list of
         objects instead.
     :return: Returns the selected assets in the editor content browser.
-    :rtype: list(object)
+    :rtype: list(object or str)
     """
     utility_base = unreal.GlobalEditorUtilityBase.get_default_object()
     selected_assets = list(utility_base.get_selected_assets())
