@@ -11,7 +11,7 @@ This repository contains some simple Python utility scripts for UE5, and the `un
 
 
 ## Resources
+- [Getting Started with Python in Unreal](https://www.aaronbcarlisle.me/python-in-unreal/)
 - [Unreal Engine 5 Python API Docs](https://docs.unrealengine.com/5.0/en-US/PythonAPI) 
 - [Unreal Engine 5 Early Access](https://www.unrealengine.com/en-US/unreal-engine-5) 
 - [Unreal Engine 5 Stub File and Setup](https://github.com/abcarlisle/unreal-python-dev/tree/master/stub) 
-- [Getting Started with Python in Unreal](https://www.aaronbcarlisle.me/python-in-unreal/)
