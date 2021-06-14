@@ -24,3 +24,4 @@ BuildingEscape/Content/StarterContent/HDRI
 *_BuiltData.uasset
 
 *.suo
+*.pyc
