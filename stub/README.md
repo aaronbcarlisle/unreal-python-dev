@@ -11,7 +11,7 @@ This package contains some simple unreal Python libraries meant to be used as as
 so your IDE doesn't crash/hang when you add it to your project 
 (just don't click the `unreal` or `__init__.py` files until you follow the setup steps below, or your IDE might crash).
 
-##Setup Steps
+# Setup Steps
 To allow your IDE to open the file you'll need to adjust your content and intellisense file size limits. 
 The following steps show how to do this in [PyCharm](https://www.jetbrains.com/pycharm),
 but it's the same principle for all IDE's.
