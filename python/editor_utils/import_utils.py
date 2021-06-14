@@ -88,11 +88,11 @@ def get_basic_skeletal_import_options(
     options.import_as_skeletal = True
     options.mesh_type_to_import = ImportTypes.SKELETAL_MESH
 
-    # determine and set the import option for normals. default to compute
+    # determine and set the import option for normals
     import_method = import_method or ImportOptions.COMPUTE
     options.skeletal_mesh_import_data.import_method = import_method
 
-    # don't import materials or textures
+    # determine and set whether to import materials and textures
     options.import_materials = import_materials or False
     options.import_textures = import_textures or False
     return options
