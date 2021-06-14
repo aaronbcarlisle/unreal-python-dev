@@ -2,7 +2,7 @@
 Unreal Stub File
 ================================
 
-This package contains the Unreal Engine 5 python stub file with directions on how to set it up for auto-completion in an IDE.
+This package contains the Unreal Engine 5 python stub file with directions on how to set it up for auto-completion in an [PyCharm](https://www.jetbrains.com/pycharm).
 
 #### DISCLAIMER 
 The `unreal` stub file is dynamic and will get regenerated as developers expose things in Blueprints for their Unreal Projects. The stub file in this package was generated from    the vanilla Unreal Engine 5 Early Access build and is meant for convenience.
