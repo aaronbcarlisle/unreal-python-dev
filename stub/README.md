@@ -2,7 +2,7 @@
 Unreal Stub File
 ================================
 
-This package contains some simple unreal Python libraries meant to be used as as a cookbook. My hope is that it will grow with more snippets from both myself and the community.
+This package contains the Unreal Engine 5 python stub file with directions on how to set it up for auto-completion in an IDE.
 
 ---
 
