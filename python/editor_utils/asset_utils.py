@@ -50,9 +50,7 @@ def get_selected_assets(as_paths=False):
     """
     Get the selected assets in the editor content browser.
 
-    :param bool as_paths: If True, this method will return a list of paths to
-        the selected assets, if False (default), this will return a list of
-        objects instead.
+    :param bool as_paths: If True, returns the selected asset's paths.
     :return: Returns the selected assets in the editor content browser.
     :rtype: list(object or str)
     """
