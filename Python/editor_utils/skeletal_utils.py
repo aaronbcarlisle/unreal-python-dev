@@ -1,6 +1,5 @@
 # Copyright Epic Games, Inc. All Rights Reserved.
 
-# built-in
 import unreal
 
 skeletal_mesh_library = unreal.EditorSkeletalMeshLibrary()
