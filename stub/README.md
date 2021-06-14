@@ -4,12 +4,14 @@ Unreal Stub File
 
 This package contains the Unreal Engine 5 python stub file with directions on how to set it up for auto-completion in an IDE.
 
----
+#### DISCLAIMER 
+The `unreal` stub file is dynamic and will get regenerated as developers expose things in Blueprints for their Unreal Projects. The stub file in this package was generated from the vanilla Unreal Engine 5 Early Access build and is meant for convenience.
 
-**NOTE:** Due to the size of the `unreal` stub file (about 15 MB) I've converted it into a 
+#### STUB SIZE 
+Due to the size of the `unreal` stub file (about 15 MB) I've converted it into a 
 [Python Package](https://docs.python.org/3/tutorial/modules.html#packages) 
 so your IDE doesn't crash/hang when you add it to your project 
-(just don't click the `unreal` or `__init__.py` files until you follow the setup steps below, or your IDE might crash).
+(just don't click/right-click or try to open the `unreal` directory or `__init__.py` file until you follow the setup steps below, or your IDE might crash).
 
 # Setup Steps
 To allow your IDE to open the file you'll need to adjust your content and intellisense file size limits. 
