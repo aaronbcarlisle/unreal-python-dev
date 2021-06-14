@@ -32,9 +32,9 @@ def get_asset_paths(assets):
 
 def select_assets(assets):
     """
-    Convenience method for selecting a list of assets in the browser. This method
-    will also move you to the location of the selected assets in the editor
-    browser in engine.
+    Convenience method for selecting a list of assets in the editor.
+    This method will also move you to the location of the selected assets 
+    in the editor content browser in engine.
 
     :param str or list(object or str) assets: Asset list to select.
     """
