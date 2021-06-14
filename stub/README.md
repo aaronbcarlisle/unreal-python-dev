@@ -27,7 +27,7 @@ but it's the same principle for all IDE's.
 2. Mark the `stub` directory as a `Sources Root` by right-clicking the `stub` directory and going to `Mark Directory as > Sources Root`
    (you can also do this in your project settings via settings).
    
-3. Open a python file, `import unreal` and then do `unreal.` (with the dot) to test that the autocompletion is working (see below).
+3. Open a python file, `import unreal` and then do `unreal.` (with the dot) to test that the auto-completion is working (see below).
 --- 
 
 ![Unreal Stub Demo GIF](resources/images/unreal-stub-demo.gif)
