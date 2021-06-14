@@ -1,7 +1,7 @@
 Unreal Python Dev
 ================================
 
-This repository contains some simple Python utility scripts for UE5, and the `unreal` stub file with directions on how to set it up for auto-completion. 
+This repository contains some simple Python utility scripts for UE5, and the `unreal` stub file with directions on how to set it up for auto-completion. I'm hoping it'll grow over time and be a useful resource for developers.
 
 ---
 
