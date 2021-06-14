@@ -1,6 +1,7 @@
 # Copyright Epic Games, Inc. All Rights Reserved.
 
 import unreal
+from asset_utils import asset_tools
 
 
 class ImportOptions(object):
@@ -60,7 +61,7 @@ def run_import_tasks(import_tasks):
     :rtype: list
     """
     # import the given import tasks
-    unreal.AssetToolsHelpers.get_asset_tools().import_asset_tasks(import_tasks)
+    asset_tools.import_asset_tasks(import_tasks)
 
     # return the imported assets as paths
     return import_task.get_editor_property("imported_object_paths")
