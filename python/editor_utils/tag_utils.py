@@ -1,7 +1,7 @@
 # Copyright Epic Games, Inc. All Rights Reserved.
 
 import unreal
-import asset_utils
+from . import asset_utils
 
 
 def set_tag_on_asset(asset, tag_name, tag_value, save=False):

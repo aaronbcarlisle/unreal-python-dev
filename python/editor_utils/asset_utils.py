@@ -117,4 +117,3 @@ def duplicate_asset(source_asset, asset_name, asset_path, prompt=False):
 
     # if prompt is True, use asset tools to prompt with a dialog
     return asset_tools.duplicate_asset_with_dialog(asset_name, asset_path, source_asset)
-

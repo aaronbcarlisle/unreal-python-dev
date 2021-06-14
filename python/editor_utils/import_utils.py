@@ -1,7 +1,7 @@
 # Copyright Epic Games, Inc. All Rights Reserved.
 
 import unreal
-from asset_utils import asset_tools
+from .asset_utils import asset_tools
 
 
 class ImportOptions(object):
@@ -96,4 +96,3 @@ def get_basic_skeletal_import_options(
     options.import_materials = import_materials or False
     options.import_textures = import_textures or False
     return options
-
