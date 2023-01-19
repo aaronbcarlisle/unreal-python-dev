@@ -6,6 +6,49 @@ import unreal
 asset_tools = unreal.AssetToolsHelpers.get_asset_tools()
 
 
+def rename_directory(source_directory_path, target_directory_path):
+    """
+    Utility method for renaming a directory; equivalent to a 'move' operation.
+    
+    .. NOTE:: rename_directory from EditorAssetLibrary seems to be broken in 5.1:
+        ref: https://forums.unrealengine.com/t/python-api-rename-directory-function-no-longer-works-in-5-1/748286
+
+    .. USE:: rename_directory("/game/old_location", "/game/new_location")
+
+    :param str source_directory_path: Game path to rename.
+    :param str target_directory_path: Game path to rename the directory to.
+    """
+    # discover all contents in the source directory
+    source_directory_contents = unreal.EditorAssetLibrary.list_assets(
+        source_directory_path,
+        include_folder=True
+    )
+
+    # find all assets and directories
+    source_directory_assets = [c for c in source_directory_contents if "." in c]
+    source_directory_folders = list(set(source_directory_contents) - set(source_directory_assets))
+
+    # create the new directory hierarchy
+    unreal.EditorAssetLibrary.make_directory(target_directory_path)
+    for folder in source_directory_folders:
+        new_folder_name = folder.replace(source_directory_path, target_directory_path)
+        unreal.EditorAssetLibrary.make_directory(new_folder_name)
+
+    # rename the assets to the target directory path
+    for asset_name in source_directory_assets:
+        new_asset_name = asset_name.replace(source_directory_path, target_directory_path)
+        unreal.EditorAssetLibrary.rename_asset(asset_name, new_asset_name)
+
+    # delete old directory if empty
+    if not unreal.EditorAssetLibrary.does_directory_have_assets(source_directory_path):
+        unreal.EditorAssetLibrary.delete_directory(source_directory_path)
+    else:
+        unreal.log_warning(
+            f"Could not delete '{source_directory_path}', "
+            f"directory contains assets!"
+        )
+
+
 def get_asset_path(asset):
     """
     Gets the unreal Object path if not a string.
